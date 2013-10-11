@@ -5,15 +5,15 @@ import java.util.Date;
 public class Student {
 
     private String name;
-    private Date birdate;
-    private static final long Miliseconds = (1000 * 60);
-    private static final long MilisecondsPerHours = (Miliseconds * 60);
-    private static final long MilisecondsPerDay = (MilisecondsPerHours * 24);
-    private static final long MilisecondsPerYear = (long) (MilisecondsPerDay * 365.25);
+    private Date birthdate;
+    private static final long MILISECONDS = (1000 * 60);
+    private static final long MILISECONDS_PER_HOUR = (MILISECONDS * 60);
+    private static final long MILISECONDS_PER_DAY = (MILISECONDS_PER_HOUR * 24);
+    private static final long MILISECONDS_PER_YEAR = (long) (MILISECONDS_PER_DAY * 365.25);
 
-    public Student(String name, Date birdate) {
+    public Student(String name, Date birthdate) {
         this.name = name;
-        this.birdate = birdate;
+        this.birthdate = birthdate;
     }
 
     public String getName() {
@@ -21,12 +21,12 @@ public class Student {
     }
 
     public Date getBirdate() {
-        return birdate;
+        return birthdate;
     }
 
     public int getAge() {
         Date today = new Date();
-        long age = today.getTime() - birdate.getTime();
-        return (int) (age / MilisecondsPerYear);
+        long age = today.getTime() - birthdate.getTime();
+        return (int) (age / MILISECONDS_PER_YEAR);
     }
 }
